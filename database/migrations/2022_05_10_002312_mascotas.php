@@ -14,6 +14,14 @@ return new class extends Migration
     public function up()
     {
         //
+        Schema::create('mascotas', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->string('tipo');
+            $table->integer('edad')->unsigned();
+            $table->string('enfermedades');
+            $table->timestamps();
+        });
     }
 
     /**
